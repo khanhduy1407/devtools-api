@@ -1,0 +1,37 @@
+{
+  "name": "@nkduy/devtools-api",
+  "version": "6.0.0-beta.11",
+  "description": "Interact with the Kdu devtools from the page",
+  "main": "lib/cjs/index.js",
+  "browser": "lib/esm/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "sideEffects": false,
+  "author": {
+    "name": "NKDuy"
+  },
+  "files": [
+    "lib/esm",
+    "lib/cjs"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/khanhduy1407/devtools-api.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf lib && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --module es2015 --outDir lib/esm",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs -d",
+    "build:watch": "yarn tsc --module commonjs --outDir lib/cjs -d -w --sourceMap",
+    "ts": "yarn build:esm"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "@types/webpack-env": "^1.15.1",
+    "typescript": "^3.8.3"
+  }
+}
